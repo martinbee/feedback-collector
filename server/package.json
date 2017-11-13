@@ -1,12 +1,20 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
+  "name": "feedback-collector-surveyor",
+  "version": "0.0.1",
+  "description": "Feedback collection service. Users can send surveys to customers and see customer responses tabulated and formatted.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "emails",
+    "node",
+    "OAuth",
+    "survey"
+  ],
+  "author": "Martin Bee",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
