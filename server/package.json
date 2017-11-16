@@ -10,6 +10,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "lint": "eslint src/**.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -26,6 +27,11 @@
     "passport-google-oauth20": "^1.0.0"
   },
   "devDependencies": {
-    "dotenv": "^4.0.0"
+    "babel-eslint": "^8.0.2",
+    "dotenv": "^4.0.0",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.12.1"
   }
 }
