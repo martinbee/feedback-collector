@@ -12,13 +12,31 @@ const {
 
 const app = express();
 
-const googleStrategy = new GoogleStrategy({
+// google strategy
+const googleStrategyArgs = {
   clientID: GOOGLE_CLIENT_ID,
   clientSecret: GOOGLE_CLIENT_SECRET,
   callbackURL: '/auth/google/callback',
-});
+};
+const googleStrategyCallback = (accessToken, refreshToken, profile, done) => {
+  console.log('accessToken', accessToken);
+  console.log('refreshToken', refreshToken);
+  console.log('profile', profile);
+  console.log('done', done);
+};
+
+const googleStrategy = new GoogleStrategy(googleStrategyArgs, googleStrategyCallback);
 
 passport.use(googleStrategy);
+
+app.get('/auth/google', passport.authenticate(
+  'google',
+  {
+    scope: ['profile', 'email'],
+  }
+));
+
+app.get('/auth/google/callback', passport.authenticate('google'));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
